@@ -11,7 +11,7 @@ Conduct Security Research on macOS using both Linux & Windows!
 The Discord is active on #docker-osx and anyone is welcome to come and ask questions, ideas, etc.
 
 <p align="center">
-    <a href="https://hub.docker.com/r/sickcodes/docker-osx"><img src="https://dockeri.co/image/sickcodes/docker-osx"/></a><a href="https://discord.gg/sickchat"><a href="https://discord.gg/sickchat" target="_blank"><img src="https://raw.githubusercontent.com/sickcodes/Docker-OSX/master/discord-logo.svg"></a></a>
+    <a href="https://hub.docker.com/r/sickcodes/docker-osx"><img src="https://dockeri.co/image/sickcodes/docker-osx"/></a><a href="https://discord.gg/sickchat"><a href="https://discord.gg/sickchat" target="_blank"><img src="https://raw.githubusercontent.com/remottely/Docker-OSX/master/discord-logo.svg"></a></a>
 </p>
 
 
@@ -46,7 +46,7 @@ Video setup tutorial is also available here: https://www.youtube.com/watch?v=wLe
 **Windows users:** [click here to see the notes below](#id-like-to-run-docker-osx-on-windows)!
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=wLezYl77Ll8" target="_blank"><img src="https://raw.githubusercontent.com/sickcodes/Docker-OSX/master/Youtube-Screenshot-Docker-OSX-Setup.png"></a>
+  <a href="https://www.youtube.com/watch?v=wLezYl77Ll8" target="_blank"><img src="https://raw.githubusercontent.com/remottely/Docker-OSX/master/Youtube-Screenshot-Docker-OSX-Setup.png"></a>
 </p>
 
 First time here? try [initial setup](#initial-setup), otherwise try the instructions below to use either Catalina or Big Sur.
@@ -89,7 +89,7 @@ docker run -it \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e "DISPLAY=${DISPLAY:-:0.0}" \
     -e GENERATE_UNIQUE=true \
-    -e MASTER_PLIST_URL='https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist' \
+    -e MASTER_PLIST_URL='https://raw.githubusercontent.com/remottely/osx-serial-generator/master/config-custom.plist' \
     sickcodes/docker-osx:monterey
 
 # docker build -t docker-osx --build-arg SHORTNAME=monterey .
@@ -105,7 +105,7 @@ docker run -it \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e "DISPLAY=${DISPLAY:-:0.0}" \
     -e GENERATE_UNIQUE=true \
-    -e MASTER_PLIST_URL='https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist' \
+    -e MASTER_PLIST_URL='https://raw.githubusercontent.com/remottely/osx-serial-generator/master/config-custom.plist' \
     sickcodes/docker-osx:ventura
 
 # docker build -t docker-osx --build-arg SHORTNAME=ventura .
@@ -179,7 +179,7 @@ docker run -it \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -e "DISPLAY=${DISPLAY:-:0.0}" \
     -e GENERATE_UNIQUE=true \
-    -e MASTER_PLIST_URL=https://raw.githubusercontent.com/sickcodes/Docker-OSX/master/custom/config-nopicker-custom.plist \
+    -e MASTER_PLIST_URL=https://raw.githubusercontent.com/remottely/Docker-OSX/master/custom/config-nopicker-custom.plist \
     sickcodes/docker-osx:naked
 ```
 
@@ -208,7 +208,7 @@ docker run -it \
     -e "USERNAME=user" \
     -e "PASSWORD=alpine" \
     -e GENERATE_UNIQUE=true \
-    -e MASTER_PLIST_URL=https://raw.githubusercontent.com/sickcodes/Docker-OSX/master/custom/config-nopicker-custom.plist \
+    -e MASTER_PLIST_URL=https://raw.githubusercontent.com/remottely/Docker-OSX/master/custom/config-nopicker-custom.plist \
     sickcodes/docker-osx:naked-auto
 ```
 
@@ -234,7 +234,7 @@ If you have a desktop PC, you can use [@Silfalion](https://github.com/Silfalion)
 Video setup tutorial for usbfluxd is also available here: https://www.youtube.com/watch?v=kTk5fGjK_PM
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=kTk5fGjK_PM" target="_blank"><img alt="iPhone USB passthrough on macOS virtual machine Linux & Windows" src="https://raw.githubusercontent.com/sickcodes/Docker-OSX/master/Youtube-USBFLUXD-Screenshot-Docker-OSX.png"></a>
+  <a href="https://www.youtube.com/watch?v=kTk5fGjK_PM" target="_blank"><img alt="iPhone USB passthrough on macOS virtual machine Linux & Windows" src="https://raw.githubusercontent.com/remottely/Docker-OSX/master/Youtube-USBFLUXD-Screenshot-Docker-OSX.png"></a>
 </p>
 
 
@@ -1382,7 +1382,7 @@ docker run -it \
     -e BOARD_SERIAL="C027251024NJG36UE" \
     -e UUID="5CCB366D-9118-4C61-A00A-E5BAF3BED451" \
     -e MAC_ADDRESS="A8:5C:2C:9A:46:2F" \
-    -e MASTER_PLIST_URL=https://raw.githubusercontent.com/sickcodes/Docker-OSX/master/custom/config-nopicker-custom.plist \
+    -e MASTER_PLIST_URL=https://raw.githubusercontent.com/remottely/Docker-OSX/master/custom/config-nopicker-custom.plist \
     -e WIDTH=1600 \
     -e HEIGHT=900 \
     sickcodes/docker-osx:naked
@@ -1455,7 +1455,7 @@ Use the `config-custom.plist` because you probably want to see the boot menu, ot
 DISK_TWO="${PWD}/mount_me.img"
 ```
 ```dockerfile
--e MASTER_PLIST_URL='https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist' \
+-e MASTER_PLIST_URL='https://raw.githubusercontent.com/remottely/osx-serial-generator/master/config-custom.plist' \
 -v "${DISK_TWO}:/disktwo" \
 -e EXTRA='-device ide-hd,bus=sata.5,drive=DISK-TWO -drive id=DISK-TWO,if=none,file=/disktwo,format=qcow2' \
 ```
@@ -1470,7 +1470,7 @@ docker run -it \
     --device /dev/kvm \
     -e "DISPLAY=${DISPLAY:-:0.0}" \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -e MASTER_PLIST_URL='https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist' \
+    -e MASTER_PLIST_URL='https://raw.githubusercontent.com/remottely/osx-serial-generator/master/config-custom.plist' \
     -v "${OSX_IMAGE}":/image \
     -v "${DISK_TWO}":/disktwo \
     -e EXTRA='-device ide-hd,bus=sata.5,drive=DISK-TWO -drive id=DISK-TWO,if=none,file=/disktwo,format=qcow2' \
