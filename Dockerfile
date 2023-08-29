@@ -324,7 +324,7 @@ ENV NETWORKING=vmxnet3
 ENV NOPICKER=false
 
 # dynamic RAM options for runtime
-ENV RAM=4
+ENV RAM=10
 # ENV RAM=max
 # ENV RAM=half
 
